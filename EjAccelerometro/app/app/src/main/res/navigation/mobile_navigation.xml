@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/Ullada">
+
+    <fragment
+        android:id="@+id/Ullada"
+        android:name="com.xavi.imageia.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_Ullada_to_Compte"
+            app:destination="@id/Compte" />
+        <action
+            android:id="@+id/action_Ullada_to_Historial"
+            app:destination="@id/Historial" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Historial"
+        android:name="com.xavi.imageia.ui.dashboard.DashboardFragment"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_Historial_to_Ullada"
+            app:destination="@id/Ullada" />
+        <action
+            android:id="@+id/action_Historial_to_Compte"
+            app:destination="@id/Compte"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/Compte"
+        android:name="com.xavi.imageia.ui.notifications.NotificationsFragment"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_Compte_to_Historial"
+            app:destination="@id/Historial" />
+        <action
+            android:id="@+id/action_Compte_to_Ullada"
+            app:destination="@id/Ullada" />
+    </fragment>
+</navigation>
